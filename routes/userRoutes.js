@@ -3,10 +3,10 @@ const router = express.Router();
 const db = require('../db');
 const User = require('../Model/user')
 // Middleware specific to this router
-router.use((req, res, next) => {
-    console.log('Time:', Date.now());
-    next();
-});
+// router.use((req, res, next) => {
+//     console.log('Time:', Date.now());
+//     next();
+// });
 
 
 
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
 
 router.get('/users', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT * FROM login');
+    const [rows] = await db.query('SELECT * FROM sign_up');
     res.json(rows);
   } catch (error) {
     console.error(error);

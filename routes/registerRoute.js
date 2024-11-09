@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
         }
 
         // Create new user
-        const userId = await User.create({name, email, hashedPassword, username, gender, DOB, qualification, Address });
+        const userId = await User.create({name, email, password, username, gender, DOB, qualification, Address });
 
         res.status(201).json({
             status: 'success',
